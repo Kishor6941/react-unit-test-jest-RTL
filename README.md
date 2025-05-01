@@ -1,54 +1,48 @@
-# React + TypeScript + Vite
+What to test?
+    1) Test component renders
+    2) Test component renders with props
+    3) Test component renders in different states
+    4) Test component reacts to events
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+What not to test?
+    1) Implmentation details
+    2) Third party code
+    3) Code thatis not implement from a user point of view    
 
-Currently, two official plugins are available:
+ RTL Queries
+  Every test we write generally involves the following basic steps
+  1) Render the component
+  2) Find an element rendered by the component
+  3) Assert against the element found in step 2 which will pass or fail the test.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+  - To render the component, we use the render method from RTL
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+  - For assertion, we use expect passing in a value and combine it with a matcher function from jest or jest-dom.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+  Queries are the methods that Testing Library provides to find elements on the page.
+   To find a single element on the page, we have
+        .getBy..
+        .queryBy..
+        .findBy..
+   To find multiple elements on the page, we have
+        . getAllBy..
+        . queryAllBy..
+        . findAllBy..
+       .. is the suffix can be one of Role, LabelText, PlaceHolderText, Text, DisplayValue, AltText, Title and finally TestId
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+  getBy.. queries
+
+    - getBy.. class of queries return the matching node for a query, and throw a descriptive error if no elements match or if more than one match is found 
+
+    getByRole
+     - getByRole queries for elements with the given role
+     - Role refers to the ARIA (Accessible Rich Internet Applications) role which provides semantic meaning to content to ensure people using assitive technologies are able to use them.
+     - By default,many semantic elements in HTML have a role
+     - Button element has a button role, anchor element has a link role, h1 to h6 elements have a heading role, checkboxes have a checkbox role, radio buttons have a radio role and so on
+
+     - if you're working with elements that do not have a default role or if you want to specify a different role, the role attribute can be used to add the desired role
+
+     - To use an anchor element as a button in the navbar, you can add role="button"               
