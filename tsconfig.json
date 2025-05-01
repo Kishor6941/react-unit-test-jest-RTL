@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "jsx": "react-jsx", // Ensure this is set for JSX support
+    "esModuleInterop": true, // Add this line
+    "moduleResolution": "node",
+    "strict": true,
+    "skipLibCheck": true
+  },
+  "include": ["src"]
+}
