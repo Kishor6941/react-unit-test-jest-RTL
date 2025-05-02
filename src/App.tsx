@@ -1,9 +1,11 @@
-import { Application } from "./components/greet/application/application"
+import { Application } from "./components/application/application"
 import "./App.css"
+import Skills from "./components/skills/Skills"
 const App = () => {
   return (
     <div className="app">
-      <Application />
+      {/* <Application /> */}
+      <Skills skills={["React", "TypeScript", "Jest"]} />
     </div>
   )
 }

@@ -1,12 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1745842710887" clover="3.2.0">
-  <project timestamp="1745842710887" name="All files">
-    <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1" elements="6" coveredelements="5" complexity="0" loc="3" ncloc="3" packages="1" files="1" classes="1"/>
-    <file name="Greet.tsx" path="/Users/k.phawade/Documents/react-typescript/src/components/greet/Greet.tsx">
+<coverage generated="1746172128911" clover="3.2.0">
+  <project timestamp="1746172128912" name="All files">
+    <metrics statements="13" coveredstatements="12" conditionals="4" coveredconditionals="2" methods="6" coveredmethods="4" elements="23" coveredelements="18" complexity="0" loc="13" ncloc="13" packages="3" files="3" classes="3"/>
+    <package name="application">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+      <file name="application.tsx" path="C:\Users\91904\OneDrive\Documents\React learn\react-jest-RTL\src\components\application\application.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="greet">
       <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
-      <line num="6" count="1" type="stmt"/>
-      <line num="8" count="1" type="stmt"/>
-      <line num="13" count="1" type="stmt"/>
-    </file>
+      <file name="Greet.tsx" path="C:\Users\91904\OneDrive\Documents\React learn\react-jest-RTL\src\components\greet\Greet.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="skills">
+      <metrics statements="8" coveredstatements="7" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="2"/>
+      <file name="Skills.tsx" path="C:\Users\91904\OneDrive\Documents\React learn\react-jest-RTL\src\components\skills\Skills.tsx">
+        <metrics statements="8" coveredstatements="7" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="2"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="3" type="stmt"/>
+        <line num="6" count="3" type="stmt"/>
+        <line num="7" count="3" type="stmt"/>
+        <line num="11" count="9" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+      </file>
+    </package>
   </project>
 </coverage>

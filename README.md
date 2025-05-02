@@ -89,3 +89,61 @@ What not to test?
       6) getByAltText
       7) getByTitle
       8) getByTestId
+
+- RTL getAllBy Queries
+  - find multiple elements in the DOM
+  - getAllBy returns an array of all matching nodes for a query, and throws an error if no elements match
+      1) getAllByRole
+      2) getAllByLabelText
+      3) getAllByPlaceholderText
+      4) getAllByText
+      5) getAllByDisplayValue
+      6) getAllByAltText
+      7) getAllByTitle
+      8) getAllByTestId
+
+- getAllByRole
+
+
+- queryBy and queryAllBy
+- queryBy
+- Returns the matching node for a query, and return null if no elements match
+- Useful for asserting an element that is not present
+- Throws an error if more than one match is found
+
+queryAllBy
+- Returns an array of all matching nodes for a query, and return an empty array if no elements match
+
+      1) queryByRole
+      2) queryByLabelText
+      3) queryByPlaceholderText
+      4) queryByText
+      5) queryByDisplayValue
+      6) queryByAltText
+      7) queryByTitle
+      8) queryByTestId
+
+       1) queryAllByRole
+      2) queryAllByLabelText
+      3) queryAllByPlaceholderText
+      4) queryAllByText
+      5) queryAllByDisplayValue
+      6) queryAllByAltText
+      7) queryAllByTitle
+      8) queryAllByTestId
+
+Queries so far
+- getBy and getAllBy of queries to assert if elements are present in the DOM
+- queryBy and queryAllBy class of queries to assert if elements are not present in the DOM
+
+- What if elements are not present in the DOM to begin but make their way into the DOM after some time?
+- For example, data that is fetched from a server will be rendered only after a few milliseconds
+
+- findBy and findAllBy
+- findBy
+ - Returns a Promise which resolves when an element is found which matches the given query.
+ - The Promise is rejected if no elements is found or if more than one element is found after a default timeout of 1000ms
+
+ - findAllBy
+- Returns a promise which resolves to an array of elements when any elements are found which match the given query
+- The promise is rejected if no elements are found after a default timeout of 1000ms
