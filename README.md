@@ -1,13 +1,13 @@
 What to test?
-    1) Test component renders
-    2) Test component renders with props
-    3) Test component renders in different states
-    4) Test component reacts to events
+  1) Test component renders
+  2) Test component renders with props
+  3) Test component renders in different states
+  4) Test component reacts to events
 
 What not to test?
-    1) Implmentation details
-    2) Third party code
-    3) Code thatis not implement from a user point of view    
+  1) Implmentation details
+  2) Third party code
+  3) Code that is not implement from a user point of view    
 
  RTL Queries
   Every test we write generally involves the following basic steps
@@ -21,23 +21,23 @@ What not to test?
   - For assertion, we use expect passing in a value and combine it with a matcher function from jest or jest-dom.
 
 
-  Queries are the methods that Testing Library provides to find elements on the page.
+  - Queries are the methods that Testing Library provides to find elements on the page.
    To find a single element on the page, we have
-        .getBy..
-        .queryBy..
-        .findBy..
+      - getBy..
+      - queryBy..
+      - findBy..
    To find multiple elements on the page, we have
-        . getAllBy..
-        . queryAllBy..
-        . findAllBy..
+      - getAllBy..
+      - queryAllBy..
+      - findAllBy..
        .. is the suffix can be one of Role, LabelText, PlaceHolderText, Text, DisplayValue, AltText, Title and finally TestId
 
 
-  getBy.. queries
+  - getBy.. queries
 
     - getBy.. class of queries return the matching node for a query, and throw a descriptive error if no elements match or if more than one match is found 
 
-    getByRole
+  - getByRole
 
      - getByRole queries for elements with the given role
      - Role refers to the ARIA (Accessible Rich Internet Applications) role which provides semantic meaning to content to ensure people using assitive technologies are able to use them.
@@ -56,5 +56,36 @@ What not to test?
           checked
           pressed
 
-    getByLabelText   
-    -    
+- getByLabelText   
+    -  getByLabelText will search for the label that matches the given text, then find the element associated with that label   
+
+- getByPlaceholderText
+    - getByPlaceholderText will search for all elements with a placeholder attribute and find one that matches the given text
+
+- getByText
+    - getByText will search for all elements that have a text node with textContent matching the give text
+
+    Typically, you'd use this to find paragraph, div or span elements
+
+- getByDisplayValue
+   - getByDisplayValue returns the input, textarea, or select element that has the matching display value 
+
+- getByAltText
+    - getByAltText will return the element that has the given alt text
+    - This method only supports elements which accept an alt attribute like <img>,<input>,<area> or custom HTML elements
+
+- getByTitle
+     - getByTitle returns the element that has the matching title attribute
+
+- getByTestId
+     - getByTestId returns the element that has the matching data-testid attribute
+
+     Priority Order for Queries
+      1) getByRole
+      2) getByLabelText
+      3) getByPlaceholderText
+      4) getByText
+      5) getByDisplayValue
+      6) getByAltText
+      7) getByTitle
+      8) getByTestId
