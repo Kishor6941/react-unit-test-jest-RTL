@@ -167,3 +167,8 @@ Queries so far
        For example, we can dispatch the change event on an input field using fireEvent
        - when a user types into a text box, the element has to be focused, and then keyboard and input events are fired and the selection and value on the element are manipulated as they type
        - user-event allows you to describe a user interaction instead of a concrete event. It adds visibility and intractability checks along the way and manipulates the DOM just like a user interaction in the browser would. It factors in that the browser e.g wouldn't let a user click  hidden element or type in a disabled text box.
+
+React Testing Library (RTL) Questions
+What is React Testing Library, and how is it different from Enzyme?
+
+Answer: RTL encourages testing components in a way that simulates how users interact with them, focusing on behavior over implementation details. Enzyme allows for shallow rendering and gives access to component internals.
